@@ -12,3 +12,5 @@ multiple Flutter or Dart projects.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+![Alt Text](https://github.com/MustansirZia/overlay_container/raw/master/overlay_container_demo.gif)
