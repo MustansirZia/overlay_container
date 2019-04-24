@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class OverlayContainer extends StatefulWidget {
+  /// The child to render inside the container.
   final Widget child;
+
+  /// By default, the child will be rendered right below the
+  /// widget which is defined alongside the OverlayContainer.
+  /// It's position can be however altered and the child can 
+  /// be moved to any part of the screen by supplying a `position` 
+  /// argument.
   final OverlayContainerPosition position;
   final bool show;
   final bool asWideAsParent;
@@ -70,14 +77,18 @@ class _OverlayContainerState extends State<OverlayContainer> {
     RenderBox renderBox = context.findRenderObject();
     final size = renderBox.size;
     final offset = renderBox.localToGlobal(Offset.zero);
-    return OverlayEntry(builder: (context) {
-      return Positioned(
-        left: offset.dx + widget.position.left,
-        top: offset.dy - widget.position.bottom,
-        width: widget.asWideAsParent ? size.width : null,
-        child: widget.child,
-      );
-    });
+    return OverlayEntry(
+      builder: (context) {
+        return Positioned(
+          left: offset.dx + widget.position.left,
+          top: offset.dy - widget.position.bottom,
+          width: widget.asWideAsParent ? size.width : null,
+          child: Material(
+            child: widget.child,
+          ),
+        );
+      },
+    );
   }
 }
 
