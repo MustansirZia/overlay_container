@@ -4,13 +4,20 @@ class OverlayContainer extends StatefulWidget {
   /// The child to render inside the container.
   final Widget child;
 
-  /// By default, the child will be rendered right below the
-  /// widget which is defined alongside the OverlayContainer.
-  /// It's position can be however altered and the child can 
+  /// By default, the child will be rendered right below (if the parent is `Column`)
+  /// the widget which is defined alongside the OverlayContainer.
+  /// It would appear as though the Overlay is inside its parent
+  /// but in reality it would be outside and above 
+  /// the original widget hierarchy.
+  /// It's position can be altered and the overlay can 
   /// be moved to any part of the screen by supplying a `position` 
   /// argument.
   final OverlayContainerPosition position;
+
+  /// Controlling whether the overlay is current showing or not.
   final bool show;
+
+  /// Whether the overlay is wide as its enclosing parent.
   final bool asWideAsParent;
 
   OverlayContainer({
@@ -92,6 +99,12 @@ class _OverlayContainerState extends State<OverlayContainer> {
   }
 }
 
+/// Class to help position the overlay on the screen.
+/// By default it will be rendered right below (if the parent is `Column`) 
+/// the widget which is alongside the OverlayContainer.
+/// The Overlay can however be moved around by giving a left value
+/// and a bottom value just like in the case of a `Positioned` widget.
+/// The default values for `left` and `bottom` are 0 and 0 respectively.
 class OverlayContainerPosition {
   final double left;
   final double bottom;
