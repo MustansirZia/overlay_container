@@ -1,15 +1,20 @@
 # overlay_container
 
+![Pub](https://img.shields.io/pub/v/overlay_container.svg?logo=flutter&style=flat-square)
+![License](https://img.shields.io/github/license/mustansirzia/overlay_container.svg?style=flat-square)
+
 A flutter widget which renders its child outside the original widget hierarchy.
 
 ## Demo.
+
 ![Demo](https://github.com/MustansirZia/overlay_container/raw/master/overlay_container_demo.gif)
 
 This demo is present as an example [here](https://github.com/MustansirZia/overlay_container/tree/master/example). You can also checkout the `examples` folder.
 
 ## Description.
+
 The child passed to this widget is rendered outside the widget hierarchy as an overlay to the exisiting widget tree. As a result this widget is highly suitable for building custom dropdown options, autocomplete suggestions, dialogs, etc. Think of it as widget placed absolutely and having a positive z-index over the rest of the widget tree.
-It is actually a friendly wrapper over the Flutter's [Overlay](https://docs.flutter.io/flutter/widgets/Overlay-class.html) and [OverlayEntry](https://docs.flutter.io/flutter/widgets/OverlayEntry-class.html) APIs. 
+It is actually a friendly wrapper over the Flutter's [Overlay](https://docs.flutter.io/flutter/widgets/Overlay-class.html) and [OverlayEntry](https://docs.flutter.io/flutter/widgets/OverlayEntry-class.html) APIs.
 
 ## Example.
 
@@ -102,11 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
 A more elaborate example is found [here](https://github.com/MustansirZia/overlay_container/tree/master/example).
 
 ## Installation.
 
-* Instructions are [here](https://pub.dartlang.org/packages/overlay_container#-installing-tab-).
+- Instructions are [here](https://pub.dartlang.org/packages/overlay_container#-installing-tab-).
 
 ## License.
-* MIT.
+
+- MIT.
