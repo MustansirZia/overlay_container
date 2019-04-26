@@ -1,12 +1,7 @@
 # overlay_container
 
-<<<<<<< HEAD
-[![Pub Package](https://img.shields.io/pub/v/overlay_container.svg?color=blue&style=flat-square)](https://pub.dartlang.org/packages/overlay_container)
+[![Pub Package](https://img.shields.io/pub/v/overlay_container.svg?color=blue&style=flat-square&logo=flutter)](https://pub.dartlang.org/packages/overlay_container)
 [![License](https://img.shields.io/github/license/mustansirzia/overlay_container.svg?style=flat-square)](https://github.com/MustansirZia/overlay_container/blob/master/LICENSE)
-=======
-![Pub](https://img.shields.io/pub/v/overlay_container.svg?logo=flutter&style=flat-square)
-![License](https://img.shields.io/github/license/mustansirzia/overlay_container.svg?style=flat-square)
->>>>>>> 1ea3d4a3d57fafa379bd72f4ef1491f5ecbdeffb
 
 A flutter widget which renders its child outside the original widget hierarchy.
 
