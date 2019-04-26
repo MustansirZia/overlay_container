@@ -16,6 +16,8 @@ This demo is present as an example [here](https://github.com/MustansirZia/overla
 The child passed to this widget is rendered outside the widget hierarchy as an overlay to the exisiting widget tree. As a result this widget is highly suitable for building custom dropdown options, autocomplete suggestions, dialogs, etc. Think of it as widget placed absolutely and having a positive z-index over the rest of the widget tree.
 It is actually a friendly wrapper over the Flutter's [Overlay](https://docs.flutter.io/flutter/widgets/Overlay-class.html) and [OverlayEntry](https://docs.flutter.io/flutter/widgets/OverlayEntry-class.html) APIs.
 
+It you've ever used react, this ties to do what [React Portal](https://reactjs.org/docs/portals.html) does, in a way.
+
 ## Example.
 
 ```dart
@@ -114,6 +116,12 @@ A more elaborate example is found [here](https://github.com/MustansirZia/overlay
 
 - Instructions are [here](https://pub.dartlang.org/packages/overlay_container#-installing-tab-).
 
+
+## Inspiration
+
+- [flutter_typehead](https://pub.dartlang.org/packages/flutter_typeahead).
+- [React Portal](https://reactjs.org/docs/portals.html).
+
 ## License.
 
-- MIT.
+- [MIT](https://github.com/MustansirZia/overlay_container/blob/master/LICENSE).
