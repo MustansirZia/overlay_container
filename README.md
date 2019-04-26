@@ -74,27 +74,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Bottom position.
                 45,
               ),
+              // The content inside the overlay.
               child: Container(
                 height: 70,
                 padding: const EdgeInsets.all(20),
                 margin: const EdgeInsets.only(top: 5),
-                decoration:
-                    BoxDecoration(color: Colors.white, boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.grey[300],
-                    blurRadius: 3,
-                    spreadRadius: 6,
-                  )
-                ]),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.grey[300],
+                      blurRadius: 3,
+                      spreadRadius: 6,
+                    )
+                  ],
+                ),
                 child: Text("I render outside the \nwidget hierarchy."),
               ),
             ),
           ],
         ),
-      ), 
+      ),
     );
   }
 }
+
 
 
 ```
