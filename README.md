@@ -14,6 +14,9 @@ It is actually a friendly wrapper over the Flutter's [Overlay](https://docs.flut
 ## Example.
 
 ```dart
+import 'package:flutter/material.dart';
+import 'package:overlay_container/overlay_container.dart';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,7 +101,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-
 ```
+A more elaborate example is found [here](https://github.com/MustansirZia/overlay_container/tree/master/example).
+
+## Installation.
+
+* Instructions are [here](https://pub.dartlang.org/packages/overlay_container#-installing-tab-).
+
+## License.
+* MIT.
