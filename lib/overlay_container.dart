@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 /// The child passed to this widget is rendered outside the widget hierarchy as an overlay to the exisiting widget tree. 
 /// As a result this widget is highly suitable for building custom dropdown options, autocomplete suggestions, dialogs, etc. 
 /// Think of it as widget placed absolutely and having a positive z-index over the rest of the widget tree.
-/// It is actually a friendly wrapper over the Flutter's `[Overlay](https://docs.flutter.io/flutter/widgets/Overlay-class.html)` 
-/// and `[OverlayEntry](https://docs.flutter.io/flutter/widgets/OverlayEntry-class.html)` APIs.
+/// It is actually a friendly wrapper over the Flutter's `Overlay` and `OverlayEntry` APIs.
 /// ## Example. 
 /// ```dart
 /// import 'package:flutter/material.dart';
