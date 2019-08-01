@@ -110,7 +110,10 @@ class OverlayContainer extends StatefulWidget {
 
   /// Controlling whether the overlay is current showing or not.
   final bool show;
-
+  
+  /// Controlling wether the overlay is hidden onDeactivate()
+  final bool hideOnDeactivate;
+  
   /// Whether the overlay is wide as its enclosing parent.
   final bool asWideAsParent;
 
@@ -119,6 +122,7 @@ class OverlayContainer extends StatefulWidget {
     @required this.show,
     @required this.child,
     this.asWideAsParent = false,
+    this.hideOnDeactivate = false,
     this.position = const OverlayContainerPosition(0.0, 0.0),
   }) : super(key: key);
 
@@ -146,6 +150,14 @@ class _OverlayContainerState extends State<OverlayContainer> {
       return;
     }
     _hide();
+  }
+  
+  @override
+  void deactivate() {
+    if (hideOnDeactivate) {
+      _hide();
+    }
+    super.deactivate();
   }
 
   void _show() {
