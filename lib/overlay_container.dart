@@ -154,7 +154,7 @@ class _OverlayContainerState extends State<OverlayContainer> {
   
   @override
   void deactivate() {
-    if (hideOnDeactivate) {
+    if (widget.hideOnDeactivate) {
       _hide();
     }
     super.deactivate();
