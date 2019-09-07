@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-/// The child passed to this widget is rendered outside the widget hierarchy as an overlay to the exisiting widget tree. 
-/// As a result this widget is highly suitable for building custom dropdown options, autocomplete suggestions, dialogs, etc. 
+/// The child passed to this widget is rendered outside the widget hierarchy as an overlay to the exisiting widget tree.
+/// As a result this widget is highly suitable for building custom dropdown options, autocomplete suggestions, dialogs, etc.
 /// Think of it as widget placed absolutely and having a positive z-index over the rest of the widget tree.
 /// It is actually a friendly wrapper over the Flutter's `Overlay` and `OverlayEntry` APIs.
-/// ## Example. 
+/// ## Example.
 /// ```dart
 /// import 'package:flutter/material.dart';
 /// import 'package:overlay_container/overlay_container.dart';
@@ -126,7 +126,8 @@ class OverlayContainer extends StatefulWidget {
   _OverlayContainerState createState() => _OverlayContainerState();
 }
 
-class _OverlayContainerState extends State<OverlayContainer> {
+class _OverlayContainerState extends State<OverlayContainer>
+    with WidgetsBindingObserver {
   OverlayEntry _overlayEntry;
   bool _opened = false;
 
@@ -136,6 +137,30 @@ class _OverlayContainerState extends State<OverlayContainer> {
     if (widget.show) {
       _show();
     }
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void didChangeMetrics() {
+    // We would want to re render the overlay if any metrics
+    // ever change.
+    if (widget.show) {
+      _show();
+    } else {
+      _hide();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // We would want to re render the overlay if any of the dependencies
+    // ever change.
+    if (widget.show) {
+      _show();
+    } else {
+      _hide();
+    }
   }
 
   @override
@@ -143,14 +168,23 @@ class _OverlayContainerState extends State<OverlayContainer> {
     super.didUpdateWidget(oldWidget);
     if (widget.show) {
       _show();
-      return;
+    } else {
+      _hide();
     }
-    _hide();
+  }
+
+  @override
+  void dispose() {
+    if (widget.show) {
+      _hide();
+    }
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   void _show() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future.delayed(const Duration(milliseconds: 280));
+      await Future.delayed(Duration(milliseconds: 280));
       if (_opened) {
         _overlayEntry.remove();
       }
@@ -171,6 +205,9 @@ class _OverlayContainerState extends State<OverlayContainer> {
 
   @override
   Widget build(BuildContext context) {
+    // Listen to changes in media query such as when a device orientation changes
+    // or when the keyboard is toggled.
+    MediaQuery.of(context);
     return Container();
   }
 
