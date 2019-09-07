@@ -1,4 +1,4 @@
-## [0.0.4] - 08/09/2019.
+## [0.0.4+1] - 08/09/2019.
 
 * `OverlayContainer` made a `WidgetsBindingObserver` and the overlay is re-inserted on every call to `didChangeMetrics`.
 
