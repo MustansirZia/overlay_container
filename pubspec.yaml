@@ -1,7 +1,6 @@
 name: overlay_container
 description: A flutter widget which renders its child outside the original widget hierarchy.
 version: 0.0.5+1
-author: Mustansir Zia <mustansir29@hotmail.com>
 homepage: https://github.com/MustansirZia/overlay_container
 
 environment:
