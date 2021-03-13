@@ -114,12 +114,16 @@ class OverlayContainer extends StatefulWidget {
   /// Whether the overlay is wide as its enclosing parent.
   final bool asWideAsParent;
 
+  /// `color` attribute for the `Material` component that wraps `child`.
+  final Color materialColor;
+
   OverlayContainer({
     Key key,
     @required this.show,
     @required this.child,
     this.asWideAsParent = false,
     this.position = const OverlayContainerPosition(0.0, 0.0),
+    this.materialColor = Colors.transparent,
   }) : super(key: key);
 
   @override
@@ -223,6 +227,7 @@ class _OverlayContainerState extends State<OverlayContainer>
           width: widget.asWideAsParent ? size.width : null,
           child: Material(
             child: widget.child,
+            color: widget.materialColor,
           ),
         );
       },
